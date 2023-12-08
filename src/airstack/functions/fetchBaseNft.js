@@ -114,11 +114,11 @@ const fetchBaseNft = async (address, existingUsers = []) => {
           break;
         }
       }
-      if (!baseNftHasNextPage) {
-        break;
-      } else {
-        baseNftDataResponse = await baseNftGetNextPage();
-      }
+      // if (!baseNftHasNextPage) {
+      break;
+      // } else {
+      //   baseNftDataResponse = await baseNftGetNextPage();
+      // }
     } else {
       console.error("Error: ", baseNftError);
       break;
