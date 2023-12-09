@@ -93,4 +93,4 @@ const calculatingScore = (user, scoreMap = defaultScoreMap) => {
   };
 };
 
-export default calculatingScore;
+export { calculatingScore };

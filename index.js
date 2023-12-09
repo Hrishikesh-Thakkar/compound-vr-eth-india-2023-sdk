@@ -1,105 +1,13 @@
-// import { init } from "@airstack/node";
-import fs from 'fs';
-// import calculatingScore from "./src/airstack/score.js";
-import { transformData, createAddressMap } from "./src/transform.js";
+import { fetchOnChainGraphData, fetchNftDetails, fetchPoapEventDetails } from "./src/fetchData.js";
+import { transformData, calculatingScore, createAddressMap } from "./src/transform.js";
+import airstack from "@airstack/node";
 
-import fetchPoapsData from "./src/airstack/functions/fetchPoapsData.js";
-import fetchFarcasterFollowings from "./src/airstack/functions/fetchFarcasterFollowings.js";
-import fetchLensFollowings from "./src/airstack/functions/fetchLensFollowings.js";
-import fetchFarcasterFollowers from "./src/airstack/functions/fetchFarcasterFollowers.js";
-import fetchLensFollowers from "./src/airstack/functions/fetchLensFollowers.js";
-import fetchTokenSent from "./src/airstack/functions/fetchTokenSent.js";
-import fetchTokenReceived from "./src/airstack/functions/fetchTokenReceived.js";
-import fetchEthNft from "./src/airstack/functions/fetchEthNft.js";
-import fetchPolygonNft from "./src/airstack/functions/fetchPolygonNft.js";
-import fetchBaseNft from "./src/airstack/functions/fetchBaseNft.js";
-
-// init(process.env.AIRSTACK_API_KEY);
-
-const fetchOnChainGraphData = async (address) => {
-  let recommendedUsers = [];
-  const fetchFunctions = [
-    fetchPoapsData,
-    fetchFarcasterFollowings,
-    fetchFarcasterFollowers,
-    fetchLensFollowings,
-    fetchLensFollowers,
-    fetchTokenSent,
-    fetchTokenReceived,
-    fetchEthNft,
-    fetchPolygonNft,
-    fetchBaseNft,
-  ];
-  for (const func of fetchFunctions) {
-    recommendedUsers = await func(address, recommendedUsers);
-  }
-  return recommendedUsers;
-};
-
-// const onChainGraphUsers = await fetchOnChainGraphData("rahul7668gupta.eth");
-// const onChainGraphUsersWithScore = onChainGraphUsers.map(user => calculatingScore(user));
-// console.log(onChainGraphUsersWithScore.length);
-
-function writeArrayToFile(array, fileName) {
-  const data = JSON.stringify(array, null, 2);
-
-  fs.writeFile(fileName, data, (err) => {
-    if (err) {
-      console.error('Error writing to file:', err);
-    } else {
-      console.log(`Array successfully written to ${fileName}`);
-    }
-  });
+export {
+  fetchNftDetails,
+  fetchPoapEventDetails,
+  fetchOnChainGraphData,
+  transformData,
+  calculatingScore,
+  createAddressMap,
+  airstack
 }
-
-const writeMapToFile = (map, filePath) => {
-  try {
-    // Convert the Map to a plain JavaScript object
-    const plainObject = {};
-    map.forEach((value, key) => {
-      plainObject[key] = value;
-    });
-
-    // Convert the object to a JSON string
-    const jsonString = JSON.stringify(plainObject, null, 2);
-
-    // Write the JSON string to the file
-    fs.writeFileSync(filePath, jsonString, 'utf8');
-
-    console.log('Map has been successfully written to the file.');
-  } catch (error) {
-    console.error(`Error writing Map to file: ${error.message}`);
-  }
-};
-
-const readJsonArrayFromFile = (filePath) => {
-  try {
-    // Read the file synchronously
-    const jsonData = fs.readFileSync(filePath, 'utf8');
-
-    // Parse the JSON data
-    const jsonArray = JSON.parse(jsonData);
-
-    // Check if the parsed data is an array
-    if (Array.isArray(jsonArray)) {
-      return jsonArray;
-    } else {
-      throw new Error('The content of the file is not a JSON array.');
-    }
-  } catch (error) {
-    console.error(`Error reading JSON array from file: ${error.message}`);
-    return null;
-  }
-};
-
-// Example usage
-// writeArrayToFile(onChainGraphUsersWithScore, 'output.json');
-
-let jsonArray = readJsonArrayFromFile('output.json');
-
-// Example usage with the provided data
-const outputData = transformData(jsonArray);
-writeArrayToFile(outputData, 'transformed.json');
-
-const addressMap = createAddressMap(jsonArray);
-writeMapToFile(addressMap, 'addressMap.json');

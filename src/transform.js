@@ -1,4 +1,6 @@
-function transformData(inputData, limit = 10) {
+import { calculatingScore } from "./airstack/score.js";
+
+function transformData(inputData, limit = 10, scoringMutiplier = 1) {
   const nodes = [];
   const links = [];
 
@@ -16,7 +18,7 @@ function transformData(inputData, limit = 10) {
       const addressNode = {
         id: addressId,
         name: address,
-        value: user._score || 0,
+        value: user._score ? user._score * scoringMutiplier : 0,
         image: user.socials ? user.socials[0]?.profileImage : undefined,
       };
 
@@ -89,4 +91,4 @@ function createAddressMap(inputData) {
   return addressMap;
 }
 
-export { transformData, createAddressMap };
+export { transformData, createAddressMap, calculatingScore };
