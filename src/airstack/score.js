@@ -1,4 +1,4 @@
-const defaultScoreMap = {
+const defaultWeightsMap = {
   tokenSent: 10,
   tokenReceived: 0,
   followedByOnLens: 5,
@@ -28,7 +28,7 @@ const isBurnedAddress = (address) => {
   );
 };
 
-const calculatingScore = (user, scoreMap = defaultScoreMap) => {
+const calculatingScore = (user, scoreMap = defaultWeightsMap) => {
   const identities = [user];
   if (
     user.addresses?.some((address) => identityMap(identities)[address]) ||
