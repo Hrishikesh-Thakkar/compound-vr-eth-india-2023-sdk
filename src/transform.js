@@ -1,6 +1,14 @@
-function transformData(inputData) {
+function transformData(inputData, limit = 10) {
   const nodes = [];
   const links = [];
+
+  // sort input data by score
+  inputData.sort((a, b) => b._score - a._score);
+
+  // limit input data
+  if (inputData.length > limit) {
+    inputData = inputData.slice(0, limit);
+  }
 
   inputData.forEach((user, userIndex) => {
     user.addresses.forEach((address, addressIndex) => {
