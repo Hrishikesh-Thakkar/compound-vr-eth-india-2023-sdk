@@ -1,5 +1,35 @@
 import fs from 'fs';
 
+function getPreferredProfileImage(socials = []) {
+  if (!socials || socials.length === 0) {
+    return "";
+  }
+  let lensImage;
+  const lensSocial = socials.find((social) => social.dappName === 'lens');
+  if (lensSocial) {
+    lensImage = lensSocial.profileImageContentValue?.image?.extraSmall || lensSocial.profileImage;
+  }
+  let farcasterImage;
+  const farcasterSocial = socials.find((social) => social.dappName === 'farcaster');
+  if (farcasterSocial) {
+    farcasterImage = farcasterSocial.profileImage;
+  }
+
+  if (lensImage && farcasterImage && isIpfsUrl(lensImage)) {
+    return farcasterImage;
+  }
+  if (!lensImage && farcasterImage) {
+    return farcasterImage;
+  }
+  if (lensImage && !farcasterImage) {
+    return lensImage;
+  }
+}
+
+function isIpfsUrl(url) {
+  return url.startsWith('ipfs://');
+}
+
 function writeJsonArrayToFile(filename, jsonArray) {
   const jsonData = JSON.stringify(jsonArray, null, 2);
 
@@ -55,5 +85,6 @@ const readJsonArrayFromFile = (filePath) => {
 export {
   writeJsonArrayToFile,
   writeMapToFile,
-  readJsonArrayFromFile
+  readJsonArrayFromFile,
+  getPreferredProfileImage
 }

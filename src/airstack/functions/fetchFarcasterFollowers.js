@@ -23,6 +23,12 @@ query MyQuery($user: Identity!) {
           profileImage
           profileTokenId
           profileTokenAddress
+          profileImageContentValue{
+            image{
+              small
+              extraSmall
+            }
+          }
         }
         xmtp {
           isXMTPEnabled

@@ -1,10 +1,9 @@
 import { calculatingScore } from "./airstack/score.js";
+import { getPreferredProfileImage } from "../utils/utils.js";
 
 function transformData(inputData, limit = 10, scoringMutiplier = 1) {
   const nodes = [];
   const links = [];
-
-  console.log(inputData[30])
 
   // sort input data by score
   inputData.sort((a, b) => {
@@ -19,11 +18,13 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
   inputData.forEach((user, userIndex) => {
     user.addresses.forEach((address, addressIndex) => {
       const addressId = `address${userIndex + 1}_${addressIndex + 1}`;
+      const userImage = getPreferredProfileImage(user.socials);
       const addressNode = {
         id: addressId,
+        type: "address",
         name: address,
         value: user._score ? user._score * scoringMutiplier : 0,
-        image: user.socials ? user.socials[0]?.profileImage : undefined,
+        image: userImage,
       };
 
       nodes.push(addressNode);
@@ -34,6 +35,7 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
           const nftId = `nft${userIndex + 1}_${addressIndex + 1}_${nftIndex + 1}`;
           const nftNode = {
             id: nftId,
+            type: 'nft',
             name: nft.name,
             value: user._score || 0,
             image: nft.image,
@@ -59,6 +61,7 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
           const poapId = `poap${userIndex + 1}_${addressIndex + 1}_${poapIndex + 1}`;
           const poapNode = {
             id: poapId,
+            type: "poap",
             name: poap.name,
             value: user._score || 0,
             image: poap.image,
