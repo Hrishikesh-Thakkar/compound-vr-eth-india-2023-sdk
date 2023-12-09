@@ -2,8 +2,8 @@ import { calculatingScore } from "./airstack/score.js";
 import { getPreferredProfileImage } from "../utils/utils.js";
 
 function transformData(inputData, limit = 10, scoringMutiplier = 1) {
-  const nodes = [];
-  const links = [];
+  let nodes = [];
+  let links = [];
 
   // sort input data by score
   inputData.sort((a, b) => {
@@ -15,9 +15,9 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
     inputData = inputData.slice(0, limit);
   }
 
-  inputData.forEach((user, userIndex) => {
-    user.addresses.forEach((address, addressIndex) => {
-      const addressId = `address${userIndex + 1}_${addressIndex + 1}`;
+  inputData.forEach((user) => {
+    user.addresses.forEach((address) => {
+      const addressId = address;
       const userImage = getPreferredProfileImage(user.socials);
       const addressNode = {
         id: addressId,
@@ -82,7 +82,23 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
     });
   });
 
+  nodes = reduceDuplicateNodes(nodes);
+
   return { nodes, links };
+}
+
+function reduceDuplicateNodes(nodes = []) {
+  const reducedNodes = [];
+  const nodeMap = new Map();
+
+  nodes.forEach((node) => {
+    if (!nodeMap.has(node.id)) {
+      nodeMap.set(node.id, true);
+      reducedNodes.push(node);
+    }
+  });
+
+  return reducedNodes;
 }
 
 function createAddressMap(inputData) {
