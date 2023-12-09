@@ -81,12 +81,12 @@ query MyQuery($user: Identity!) {
 }
 `;
 
-const fetchTokenReceived = async (address, existingUsers = []) => {
+const fetchTokenReceived = async (address, existingUsers = [], query = tokenReceivedQuery) => {
   let res;
   let recommendedUsers = [...existingUsers];
   while (true) {
     if (!res) {
-      res = await fetchQueryWithPagination(tokenReceivedQuery, {
+      res = await fetchQueryWithPagination(query, {
         user: address,
       });
     }

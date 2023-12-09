@@ -90,12 +90,12 @@ query TokenSent($user: Identity!) {
   }
 `;
 
-const fetchTokenSent = async (address, existingUsers = []) => {
+const fetchTokenSent = async (address, existingUsers = [], query = tokenSentQuery) => {
   let res;
   let recommendedUsers = [...existingUsers];
   while (true) {
     if (!res) {
-      res = await fetchQueryWithPagination(tokenSentQuery, {
+      res = await fetchQueryWithPagination(query, {
         user: address,
       });
     }

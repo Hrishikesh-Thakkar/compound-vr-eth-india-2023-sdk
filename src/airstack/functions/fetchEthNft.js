@@ -54,13 +54,13 @@ query MyQuery($tokenAddresses: [Address!]) {
 }
 `;
 
-const fetchEthNft = async (address, existingUsers = []) => {
+const fetchEthNft = async (address, existingUsers = [], query1 = nftAddressesQuery, query2 = nftQuery) => {
   let ethNftDataResponse;
   let recommendedUsers = [...existingUsers];
   while (true) {
     if (!ethNftDataResponse) {
       // Pagination #1: Fetch Ethereum NFTs
-      ethNftDataResponse = await fetchQueryWithPagination(nftAddressesQuery, {
+      ethNftDataResponse = await fetchQueryWithPagination(query1, {
         user: address,
       });
     }
@@ -80,7 +80,7 @@ const fetchEthNft = async (address, existingUsers = []) => {
         if (tokenAddresses.length === 0) break;
         if (!ethNftHoldersDataResponse) {
           // Pagination #2: Fetch Ethereum NFT Holders
-          ethNftHoldersDataResponse = await fetchQueryWithPagination(nftQuery, {
+          ethNftHoldersDataResponse = await fetchQueryWithPagination(query2, {
             tokenAddresses,
           });
         }

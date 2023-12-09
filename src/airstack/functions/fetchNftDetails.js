@@ -46,8 +46,8 @@ query MyQuery($tokenAddress: Address, $tokenId: String, $blockchain: TokenBlockc
 }
 `;
 
-const fetchNftDetails = async (tokenAddress, tokenId, blockchain) => {
-  let res = await fetchQuery(nftDetailsQuery, {
+const fetchNftDetails = async (tokenAddress, tokenId, blockchain, query = nftDetailsQuery) => {
+  let res = await fetchQuery(query, {
     tokenAddress,
     tokenId,
     blockchain

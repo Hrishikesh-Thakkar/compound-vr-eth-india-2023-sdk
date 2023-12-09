@@ -54,14 +54,14 @@ query MyQuery($tokenAddresses: [Address!]) {
 }
 `;
 
-const formatPolygonNftData = async (address, existingUsers = []) => {
+const formatPolygonNftData = async (address, existingUsers = [], query1 = nftAddressesQuery, query2 = nftQuery) => {
   let polygonNftDataResponse;
   let recommendedUsers = [...existingUsers];
   while (true) {
     if (!polygonNftDataResponse) {
       // Pagination #1: Fetch Polygon NFTs
       polygonNftDataResponse = await fetchQueryWithPagination(
-        nftAddressesQuery,
+        query1,
         {
           user: address,
         }
@@ -84,7 +84,7 @@ const formatPolygonNftData = async (address, existingUsers = []) => {
         if (!polygonNftHoldersDataResponse) {
           // Pagination #2: Fetch Polygon NFT Holders
           polygonNftHoldersDataResponse = await fetchQueryWithPagination(
-            nftQuery,
+            query2,
             {
               tokenAddresses,
             }

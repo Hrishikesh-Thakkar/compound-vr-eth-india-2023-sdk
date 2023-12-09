@@ -54,14 +54,14 @@ query MyQuery($tokenAddresses: [Address!]) {
 }
 `;
 
-const fetchBaseNft = async (address, existingUsers = []) => {
+const fetchBaseNft = async (address, existingUsers = [], query1 = nftAddressesQuery, query2 = nftQuery) => {
   let baseNftDataResponse;
   let recommendedUsers = [...existingUsers];
   while (true) {
     if (!baseNftDataResponse) {
       // Pagination #1: Fetch Base NFTs
       baseNftDataResponse = await fetchQueryWithPagination(
-        nftAddressesQuery,
+        query1,
         {
           user: address,
         }
@@ -84,7 +84,7 @@ const fetchBaseNft = async (address, existingUsers = []) => {
         if (!baseNftHoldersDataResponse) {
           // Pagination #2: Fetch Base NFT Holders
           baseNftHoldersDataResponse = await fetchQueryWithPagination(
-            nftQuery,
+            query2,
             {
               tokenAddresses,
             }

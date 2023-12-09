@@ -57,14 +57,14 @@ query MyQuery($eventIds: [String!]) {
 `;
 
 
-const fetchPoapsData = async (address, existingUsers = []) => {
+const fetchPoapsData = async (address, existingUsers = [], query1 = userPoapsEventIdsQuery, query2 = poapsByEventIdsQuery) => {
   let poapsDataResponse;
   let recommendedUsers = [...existingUsers];
   while (true) {
     if (!poapsDataResponse) {
       // Paagination #1: Fetch All POAPs
       poapsDataResponse = await fetchQueryWithPagination(
-        userPoapsEventIdsQuery,
+        query1,
         {
           user: address,
         }
@@ -87,7 +87,7 @@ const fetchPoapsData = async (address, existingUsers = []) => {
         if (!poapHoldersDataResponse) {
           // Pagination #2: Fetch All POAP holders
           poapHoldersDataResponse = await fetchQueryWithPagination(
-            poapsByEventIdsQuery,
+            query2,
             {
               eventIds,
             }

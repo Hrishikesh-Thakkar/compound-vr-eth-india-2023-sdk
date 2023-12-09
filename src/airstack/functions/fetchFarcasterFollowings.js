@@ -50,13 +50,13 @@ query MyQuery($user: Identity!) {
 }
 `;
 
-const fetchFarcasterFollowings = async (address, existingUsers = []) => {
+const fetchFarcasterFollowings = async (address, existingUsers = [], query = socialFollowingsQuery) => {
   let farcasterFollowingsDataResponse;
   let recommendedUsers = [...existingUsers];
   while (true) {
     if (!farcasterFollowingsDataResponse) {
       farcasterFollowingsDataResponse = await fetchQueryWithPagination(
-        socialFollowingsQuery,
+        query,
         {
           user: address,
         }

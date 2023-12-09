@@ -3,7 +3,6 @@ import formatFarcasterFollowersData from "../utils/formatFarcasterFollowersData.
 
 // get your API key at https://app.airstack.xyz/profile-settings/api-keys
 
-
 const socialFollowersQuery = `
 query MyQuery($user: Identity!) {
   SocialFollowers(
@@ -50,12 +49,12 @@ query MyQuery($user: Identity!) {
 }
 `;
 
-const fetchFarcasterFollowers = async (address, existingUsers = []) => {
+const fetchFarcasterFollowers = async (address, existingUsers = [], query = socialFollowersQuery) => {
   let res;
   let recommendedUsers = [...existingUsers];
   while (true) {
     if (!res) {
-      res = await fetchQueryWithPagination(socialFollowersQuery, {
+      res = await fetchQueryWithPagination(query, {
         user: address,
       });
     }

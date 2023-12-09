@@ -41,8 +41,8 @@ const poapEventDetailsQuery = `query MyQuery($eventId:String, $limit: Int=2) {
   }
 }`;
 
-const fetchPoapEventDetails = async (blockchain, eventId, limit = 2) => {
-  let res = await fetchQuery(poapEventDetailsQuery, {
+const fetchPoapEventDetails = async (blockchain, eventId, limit = 2, query = poapEventDetailsQuery) => {
+  let res = await fetchQuery(query, {
     eventId,
     limit
   });
