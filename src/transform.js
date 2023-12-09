@@ -14,7 +14,7 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
   if (inputData.length > limit) {
     inputData = inputData.slice(0, limit);
   }
-
+  
   inputData.forEach((user) => {
     user.addresses.forEach((address) => {
       const addressId = address;
@@ -27,7 +27,7 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
         image: userImage,
       };
 
-      nodes.push(addressNode);
+      let shouldAddAddressNode = false;
 
       // Link address to NFTs
       if (user.nfts) {
@@ -52,6 +52,7 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
           };
 
           links.push(linkToNft);
+          shouldAddAddressNode = true;
         });
       }
 
@@ -77,7 +78,12 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
           };
 
           links.push(linkToPoap);
+          shouldAddAddressNode = true;
         });
+      }
+
+      if (shouldAddAddressNode) {
+        nodes.push(addressNode);
       }
     });
   });
