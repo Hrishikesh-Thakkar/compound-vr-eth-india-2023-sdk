@@ -11,28 +11,28 @@ import {
 
 airstack.init(process.env.AIRSTACK_API_KEY);
 
-// // example: fetch onchain graph data
-// const onChainGraphUsers = await fetchOnChainGraphData(process.env.IDENTITY_OR_ADDRESS);
+// example: fetch onchain graph data
+const onChainGraphUsers = await fetchOnChainGraphData(process.env.IDENTITY_OR_ADDRESS);
 
-// // write onchain graph data to file
-// writeJsonArrayToFile('./onChainGraphUsers.json', onChainGraphUsers);
-// let onChainGraphUsersFromJson = readJsonArrayFromFile("./onChainGraphUsers.json")
+// write onchain graph data to file
+writeJsonArrayToFile('./onChainGraphUsers.json', onChainGraphUsers);
+let onChainGraphUsersFromJson = readJsonArrayFromFile("./onChainGraphUsers.json")
 
-// // calculate score for each user
-// let onChainGraphUsersWithScore = onChainGraphUsersFromJson.map(user => calculatingScore(user));
-// console.log(onChainGraphUsersWithScore.length);
+// calculate score for each user
+let onChainGraphUsersWithScore = onChainGraphUsersFromJson.map(user => calculatingScore(user));
+console.log(onChainGraphUsersWithScore.length);
 
-// // write onchain graph data to file
-// writeJsonArrayToFile('./output.json', onChainGraphUsersWithScore);
+// write onchain graph data to file
+writeJsonArrayToFile('./output.json', onChainGraphUsersWithScore);
 
 // read onchain graph data from file
 let jsonArray = readJsonArrayFromFile("./output.json")
 
-// // // transform onchain graph data to match the format of the visualisation tool
-const outputData = transformData(jsonArray, jsonArray.length);
-writeJsonArrayToFile(outputData, './transformed.json');
+// transform onchain graph data to match the format of the visualisation tool
+let outputData = transformData(jsonArray, jsonArray.length);
+writeJsonArrayToFile('./transformed.json', outputData);
 
-const addressMap = createAddressMap(jsonArray);
+let addressMap = createAddressMap(jsonArray);
 writeMapToFile(addressMap, './addressMap.json');
 
 // example: fetch nft details by contract address and token id, blockchain
