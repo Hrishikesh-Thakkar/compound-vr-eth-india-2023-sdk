@@ -32,7 +32,7 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
       // Link address to NFTs
       if (user.nfts) {
         user.nfts.forEach((nft) => {
-          const nftId = nft.tokenAddress;
+          const nftId = nft.address;
           const nftNode = {
             id: nftId,
             type: 'nft',
