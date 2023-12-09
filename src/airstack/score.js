@@ -35,7 +35,7 @@ const calculatingScore = (user, scoreMap = defaultScoreMap) => {
     user.domains?.some(({ name }) => identityMap(identities)[name]) ||
     user.addresses?.some((address) => isBurnedAddress(address))
   ) {
-    return;
+    return { ...user, _score: 0 };
   }
 
   let score = 0;

@@ -23,6 +23,7 @@ query MyQuery($eventIds: [String!]) {
     Poap {
       eventId
       poapEvent {
+        blockchain
         eventName
         contentValue {
           image {

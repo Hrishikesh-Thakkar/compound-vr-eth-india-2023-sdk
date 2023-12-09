@@ -1,13 +1,13 @@
 import fs from 'fs';
 
-function writeArrayToFile(array, fileName) {
-  const data = JSON.stringify(array, null, 2);
+function writeJsonArrayToFile(filename, jsonArray) {
+  const jsonData = JSON.stringify(jsonArray, null, 2);
 
-  fs.writeFile(fileName, data, (err) => {
+  fs.writeFileSync(filename, jsonData, (err) => {
     if (err) {
       console.error('Error writing to file:', err);
     } else {
-      console.log(`Array successfully written to ${fileName}`);
+      console.log(`JSON array successfully written to ${filename}`);
     }
   });
 }
@@ -53,7 +53,7 @@ const readJsonArrayFromFile = (filePath) => {
 };
 
 export {
-  writeArrayToFile,
+  writeJsonArrayToFile,
   writeMapToFile,
   readJsonArrayFromFile
 }

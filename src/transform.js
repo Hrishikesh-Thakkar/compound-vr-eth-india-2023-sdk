@@ -4,8 +4,12 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
   const nodes = [];
   const links = [];
 
+  console.log(inputData[30])
+
   // sort input data by score
-  inputData.sort((a, b) => b._score - a._score);
+  inputData.sort((a, b) => {
+    return b._score - a._score
+  });
 
   // limit input data
   if (inputData.length > limit) {
@@ -33,6 +37,9 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
             name: nft.name,
             value: user._score || 0,
             image: nft.image,
+            tokenAddress: nft.address,
+            tokenId: nft.tokenId,
+            blockchain: nft.blockchain,
           };
 
           nodes.push(nftNode);
@@ -55,6 +62,8 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
             name: poap.name,
             value: user._score || 0,
             image: poap.image,
+            blockchain: poap.blockchain,
+            eventId: poap.eventId,
           };
 
           nodes.push(poapNode);
