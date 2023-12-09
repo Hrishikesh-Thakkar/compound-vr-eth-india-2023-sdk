@@ -1,7 +1,7 @@
 import { calculatingScore } from "./airstack/score.js";
 import { getPreferredProfileImage } from "../utils/utils.js";
 
-function transformData(inputData, limit = 10, scoringMutiplier = 1) {
+function transformData(inputData, addressMap, limit = 10, scoringMutiplier = 1) {
   let nodes = [];
   let links = [];
 
@@ -18,6 +18,7 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
   inputData.forEach((user) => {
     user.addresses.forEach((address) => {
       const addressId = address;
+      const addressData = addressMap.get(address);
       const userImage = getPreferredProfileImage(user.socials);
       const addressNode = {
         id: addressId,
@@ -25,6 +26,7 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
         name: address,
         value: user._score ? user._score * scoringMutiplier : 0,
         image: userImage,
+        addressData
       };
 
       let shouldAddAddressNode = false;
