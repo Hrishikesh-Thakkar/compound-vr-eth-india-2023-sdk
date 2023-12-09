@@ -29,6 +29,7 @@ const formatEthNftData = (data, _recommendedUsers = []) => {
           blockchain: "ethereum",
           address,
           tokenId: tokenNft?.tokenId,
+          token,
         });
       }
       recommendedUsers[existingUserIndex].nfts = [..._nfts];
@@ -42,6 +43,7 @@ const formatEthNftData = (data, _recommendedUsers = []) => {
             blockchain: "ethereum",
             address,
             tokenId: tokenNft?.tokenId,
+            token,
           },
         ],
       });

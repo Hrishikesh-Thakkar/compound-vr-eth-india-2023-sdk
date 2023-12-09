@@ -24,12 +24,39 @@ query MyQuery($eventIds: [String!]) {
       eventId
       poapEvent {
         blockchain
-        eventName
+        chainId
+        city
+        contentType
         contentValue {
+          animation_url {
+            original
+          }
           image {
             extraSmall
+            large
+            medium
+            original
+            small
+          }
+          json
+          video {
+            original
           }
         }
+        country
+        dappName
+        dappSlug
+        dappVersion
+        description
+        endDate
+        eventId
+        eventName
+        eventURL
+        id
+        isVirtualEvent
+        metadata
+        startDate
+        tokenMints
       }
       attendee {
         owner {

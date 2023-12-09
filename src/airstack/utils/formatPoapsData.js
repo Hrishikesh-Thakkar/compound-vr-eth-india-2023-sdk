@@ -18,13 +18,13 @@ function formatPoapsData(poaps, exitingUser = []) {
       const _poaps = recommendedUsers?.[existingUserIndex]?.poaps || [];
       const poapExists = _poaps.some((poap) => poap.eventId === eventId);
       if (!poapExists) {
-        _poaps?.push({ name, image: contentValue?.image?.extraSmall, eventId, blockchain });
+        _poaps?.push({ name, image: contentValue?.image?.extraSmall, eventId, blockchain, poapEvent });
         recommendedUsers[existingUserIndex].poaps = [..._poaps];
       }
     } else {
       recommendedUsers.push({
         ...(attendee?.owner ?? {}),
-        poaps: [{ name, image: contentValue?.image?.extraSmall, eventId, blockchain }],
+        poaps: [{ name, image: contentValue?.image?.extraSmall, eventId, blockchain, poapEvent }],
       });
     }
   }

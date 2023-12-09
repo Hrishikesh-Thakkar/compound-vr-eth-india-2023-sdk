@@ -29,6 +29,7 @@ const formatPolygonNftDataUtil = (data, _recommendedUsers = []) => {
           blockchain: "polygon",
           address,
           tokenId: tokenNft?.tokenId,
+          token,
         });
       }
       recommendedUsers[existingUserIndex].nfts = [..._nfts];
@@ -42,6 +43,7 @@ const formatPolygonNftDataUtil = (data, _recommendedUsers = []) => {
             blockchain: "polygon",
             address,
             tokenId: tokenNft?.tokenId,
+            token,
           },
         ],
       });

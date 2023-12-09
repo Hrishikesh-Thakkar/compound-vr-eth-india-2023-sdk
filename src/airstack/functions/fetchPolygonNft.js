@@ -30,6 +30,17 @@ query MyQuery($tokenAddresses: [Address!]) {
         logo {
           small
         }
+        totalSupply
+        type
+        address
+        blockchain
+        lastTransferHash
+        lastTransferTimestamp
+        lastTransferBlock
+        contractMetaData{
+          description
+          name
+        }
       }
       owner {
         addresses

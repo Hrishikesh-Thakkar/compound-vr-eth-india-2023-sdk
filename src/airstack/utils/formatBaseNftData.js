@@ -29,6 +29,7 @@ const formatBaseNftData = (data, _recommendedUsers = []) => {
           blockchain: "base",
           address,
           tokenId: tokenNft?.tokenId,
+          token,
         });
       }
       recommendedUsers[existingUserIndex].nfts = [..._nfts];
@@ -42,6 +43,7 @@ const formatBaseNftData = (data, _recommendedUsers = []) => {
             blockchain: "base",
             address,
             tokenId: tokenNft?.tokenId,
+            token,
           },
         ],
       });

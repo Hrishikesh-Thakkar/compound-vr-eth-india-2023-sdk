@@ -14,7 +14,7 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
   if (inputData.length > limit) {
     inputData = inputData.slice(0, limit);
   }
-  
+
   inputData.forEach((user) => {
     user.addresses.forEach((address) => {
       const addressId = address;
@@ -42,6 +42,7 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
             tokenAddress: nft.address,
             tokenId: nft.tokenId,
             blockchain: nft.blockchain,
+            token: nft.token,
           };
 
           nodes.push(nftNode);
@@ -68,6 +69,7 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
             image: poap.image,
             blockchain: poap.blockchain,
             eventId: poap.eventId,
+            poapEvent: poap.poapEvent,
           };
 
           nodes.push(poapNode);
