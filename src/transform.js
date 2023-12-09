@@ -8,7 +8,8 @@ function transformData(inputData) {
       const addressNode = {
         id: addressId,
         name: address,
-        val: 10, // You can adjust this value as needed
+        value: user._score || 0,
+        image: user.socials ? user.socials[0]?.profileImage : undefined,
       };
 
       nodes.push(addressNode);
@@ -20,7 +21,8 @@ function transformData(inputData) {
           const nftNode = {
             id: nftId,
             name: nft.name,
-            val: 15, // You can adjust this value as needed
+            value: user._score || 0,
+            image: nft.image,
           };
 
           nodes.push(nftNode);
@@ -41,7 +43,8 @@ function transformData(inputData) {
           const poapNode = {
             id: poapId,
             name: poap.name,
-            val: 20, // You can adjust this value as needed
+            value: user._score || 0,
+            image: poap.image,
           };
 
           nodes.push(poapNode);
