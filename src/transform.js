@@ -31,8 +31,8 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
 
       // Link address to NFTs
       if (user.nfts) {
-        user.nfts.forEach((nft, nftIndex) => {
-          const nftId = `nft${userIndex + 1}_${addressIndex + 1}_${nftIndex + 1}`;
+        user.nfts.forEach((nft) => {
+          const nftId = nft.tokenAddress;
           const nftNode = {
             id: nftId,
             type: 'nft',
@@ -57,8 +57,8 @@ function transformData(inputData, limit = 10, scoringMutiplier = 1) {
 
       // Link address to POAPs
       if (user.poaps) {
-        user.poaps.forEach((poap, poapIndex) => {
-          const poapId = `poap${userIndex + 1}_${addressIndex + 1}_${poapIndex + 1}`;
+        user.poaps.forEach((poap) => {
+          const poapId = poap.eventId;
           const poapNode = {
             id: poapId,
             type: "poap",

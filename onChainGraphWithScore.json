@@ -908,22 +908,6 @@
         "blockchain": "gnosis"
       }
     ],
-    "nfts": [
-      {
-        "name": "Lens Protocol Profiles",
-        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
-        "blockchain": "polygon",
-        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
-        "tokenId": "51228"
-      },
-      {
-        "name": "lens Handles",
-        "image": null,
-        "blockchain": "polygon",
-        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
-        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
-      }
-    ],
     "_score": 7
   },
   {
@@ -1500,6 +1484,299 @@
     "tokenTransfers": {
       "sent": true
     },
+    "_score": 0
+  },
+  {
+    "addresses": [
+      "0x7d8504c239f951d944d23b7ad9bededc4d4512d9"
+    ],
+    "domains": null,
+    "socials": [
+      {
+        "dappName": "lens",
+        "blockchain": "polygon",
+        "profileName": "lens/@nobitaa",
+        "profileImage": "",
+        "profileTokenId": "128627",
+        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
+      }
+    ],
+    "xmtp": [
+      {
+        "isXMTPEnabled": true
+      }
+    ],
+    "nfts": [
+      {
+        "name": "lens Handles",
+        "image": null,
+        "blockchain": "polygon",
+        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
+        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
+      },
+      {
+        "name": "Lens Protocol Profiles",
+        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
+        "blockchain": "polygon",
+        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
+        "tokenId": "51228"
+      }
+    ],
+    "_score": 0
+  },
+  {
+    "addresses": [
+      "0xfb5d41db28366844eaf72742ab2ff2b93c89ff4d"
+    ],
+    "domains": null,
+    "socials": [
+      {
+        "dappName": "lens",
+        "blockchain": "polygon",
+        "profileName": "lens/@kishore",
+        "profileImage": "",
+        "profileTokenId": "128626",
+        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
+      }
+    ],
+    "xmtp": null,
+    "nfts": [
+      {
+        "name": "lens Handles",
+        "image": null,
+        "blockchain": "polygon",
+        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
+        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
+      },
+      {
+        "name": "Lens Protocol Profiles",
+        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
+        "blockchain": "polygon",
+        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
+        "tokenId": "51228"
+      }
+    ],
+    "_score": 0
+  },
+  {
+    "addresses": [
+      "0x6ebed0a2dc3d66b8656334007ac3e57070e61942"
+    ],
+    "domains": null,
+    "socials": [
+      {
+        "dappName": "lens",
+        "blockchain": "polygon",
+        "profileName": "lens/@superteamfun",
+        "profileImage": "",
+        "profileTokenId": "128625",
+        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
+      }
+    ],
+    "xmtp": null,
+    "nfts": [
+      {
+        "name": "lens Handles",
+        "image": null,
+        "blockchain": "polygon",
+        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
+        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
+      },
+      {
+        "name": "Lens Protocol Profiles",
+        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
+        "blockchain": "polygon",
+        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
+        "tokenId": "51228"
+      }
+    ],
+    "_score": 0
+  },
+  {
+    "addresses": [
+      "0x09c10d814d15c5ff5682759d5728c69d02dc0be2"
+    ],
+    "domains": null,
+    "socials": [
+      {
+        "dappName": "lens",
+        "blockchain": "polygon",
+        "profileName": "lens/@0xfluid",
+        "profileImage": "",
+        "profileTokenId": "128624",
+        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
+      }
+    ],
+    "xmtp": null,
+    "nfts": [
+      {
+        "name": "Lens Protocol Profiles",
+        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
+        "blockchain": "polygon",
+        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
+        "tokenId": "51228"
+      },
+      {
+        "name": "lens Handles",
+        "image": null,
+        "blockchain": "polygon",
+        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
+        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
+      }
+    ],
+    "_score": 0
+  },
+  {
+    "addresses": [
+      "0x9cac1a1b7ecdfcc3c757ba5d8003fc1d8c79576f"
+    ],
+    "domains": null,
+    "socials": [
+      {
+        "dappName": "lens",
+        "blockchain": "polygon",
+        "profileName": "lens/@spacekayak",
+        "profileImage": "",
+        "profileTokenId": "128623",
+        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
+      }
+    ],
+    "xmtp": null,
+    "nfts": [
+      {
+        "name": "lens Handles",
+        "image": null,
+        "blockchain": "polygon",
+        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
+        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
+      },
+      {
+        "name": "Lens Protocol Profiles",
+        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
+        "blockchain": "polygon",
+        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
+        "tokenId": "51228"
+      }
+    ],
+    "_score": 0
+  },
+  {
+    "addresses": [
+      "0x8d24173b6cf27d71b119ebfca93b0d3004717cae"
+    ],
+    "domains": [
+      {
+        "name": "jikybean.eth",
+        "isPrimary": true
+      }
+    ],
+    "socials": [
+      {
+        "dappName": "lens",
+        "blockchain": "polygon",
+        "profileName": "lens/@00893",
+        "profileImage": "ipfs://QmQUhENrkFc4AhTkajP1pHTThCCX7jpT65NubFiMw55DP7",
+        "profileTokenId": "77661",
+        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
+      },
+      {
+        "dappName": "lens",
+        "blockchain": "polygon",
+        "profileName": "lens/@jikyowo",
+        "profileImage": "",
+        "profileTokenId": "128622",
+        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
+      }
+    ],
+    "xmtp": [
+      {
+        "isXMTPEnabled": true
+      }
+    ],
+    "nfts": [
+      {
+        "name": "lens Handles",
+        "image": null,
+        "blockchain": "polygon",
+        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
+        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
+      },
+      {
+        "name": "Lens Protocol Profiles",
+        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
+        "blockchain": "polygon",
+        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
+        "tokenId": "51228"
+      }
+    ],
+    "_score": 0
+  },
+  {
+    "addresses": [
+      "0x37fd8b1724e9b34dbc6263f50e18857008fb88ab"
+    ],
+    "domains": null,
+    "socials": [
+      {
+        "dappName": "lens",
+        "blockchain": "polygon",
+        "profileName": "lens/@shaktiman",
+        "profileImage": "",
+        "profileTokenId": "128621",
+        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
+      }
+    ],
+    "xmtp": null,
+    "nfts": [
+      {
+        "name": "lens Handles",
+        "image": null,
+        "blockchain": "polygon",
+        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
+        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
+      },
+      {
+        "name": "Lens Protocol Profiles",
+        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
+        "blockchain": "polygon",
+        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
+        "tokenId": "51228"
+      }
+    ],
+    "_score": 0
+  },
+  {
+    "addresses": [
+      "0xfc4194b7b6d1778a374c18c7a31bc80d9c4db22d"
+    ],
+    "domains": null,
+    "socials": [
+      {
+        "dappName": "lens",
+        "blockchain": "polygon",
+        "profileName": "lens/@indigolabs",
+        "profileImage": "",
+        "profileTokenId": "128620",
+        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
+      }
+    ],
+    "xmtp": null,
+    "nfts": [
+      {
+        "name": "Lens Protocol Profiles",
+        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
+        "blockchain": "polygon",
+        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
+        "tokenId": "51228"
+      },
+      {
+        "name": "lens Handles",
+        "image": null,
+        "blockchain": "polygon",
+        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
+        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
+      }
+    ],
     "_score": 0
   },
   {
@@ -5066,247 +5343,6 @@
         "blockchain": "polygon",
         "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
         "tokenId": "51228"
-      }
-    ],
-    "_score": 0
-  },
-  {
-    "addresses": [
-      "0x0faef5cb418d2997ba22e0f06059f9a4071bc2d7"
-    ],
-    "domains": null,
-    "socials": [
-      {
-        "dappName": "lens",
-        "blockchain": "polygon",
-        "profileName": "lens/@gautamp8",
-        "profileImage": "",
-        "profileTokenId": "128536",
-        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
-      }
-    ],
-    "xmtp": null,
-    "nfts": [
-      {
-        "name": "lens Handles",
-        "image": null,
-        "blockchain": "polygon",
-        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
-        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
-      },
-      {
-        "name": "Lens Protocol Profiles",
-        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
-        "blockchain": "polygon",
-        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
-        "tokenId": "51228"
-      }
-    ],
-    "_score": 0
-  },
-  {
-    "addresses": [
-      "0xf4affbf5cfacfcac2563936fbfa2018ef7b42800"
-    ],
-    "domains": null,
-    "socials": [
-      {
-        "dappName": "lens",
-        "blockchain": "polygon",
-        "profileName": "lens/@dhruva",
-        "profileImage": "",
-        "profileTokenId": "128535",
-        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
-      }
-    ],
-    "xmtp": null,
-    "nfts": [
-      {
-        "name": "lens Handles",
-        "image": null,
-        "blockchain": "polygon",
-        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
-        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
-      },
-      {
-        "name": "Lens Protocol Profiles",
-        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
-        "blockchain": "polygon",
-        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
-        "tokenId": "51228"
-      }
-    ],
-    "_score": 0
-  },
-  {
-    "addresses": [
-      "0x67b3307aeef578e1c4586de02152b924bb40d8c4"
-    ],
-    "domains": [
-      {
-        "name": "antoneskooo.eth",
-        "isPrimary": true
-      }
-    ],
-    "socials": [
-      {
-        "dappName": "lens",
-        "blockchain": "polygon",
-        "profileName": "lens/@antoneskoo",
-        "profileImage": "ipfs://QmPGk6cCbLdarToxXU8mTNw1tJ13P3bb5eTMLKU5TAZiNK",
-        "profileTokenId": "128534",
-        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
-      }
-    ],
-    "xmtp": null,
-    "nfts": [
-      {
-        "name": "lens Handles",
-        "image": null,
-        "blockchain": "polygon",
-        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
-        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
-      },
-      {
-        "name": "Lens Protocol Profiles",
-        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
-        "blockchain": "polygon",
-        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
-        "tokenId": "51228"
-      }
-    ],
-    "_score": 0
-  },
-  {
-    "addresses": [
-      "0x7242217f0a279f670c5f219400e235c286968db4"
-    ],
-    "domains": null,
-    "socials": [
-      {
-        "dappName": "lens",
-        "blockchain": "polygon",
-        "profileName": "lens/@0xkarthik",
-        "profileImage": "",
-        "profileTokenId": "128533",
-        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
-      }
-    ],
-    "xmtp": null,
-    "nfts": [
-      {
-        "name": "lens Handles",
-        "image": null,
-        "blockchain": "polygon",
-        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
-        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
-      },
-      {
-        "name": "Lens Protocol Profiles",
-        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
-        "blockchain": "polygon",
-        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
-        "tokenId": "51228"
-      }
-    ],
-    "_score": 0
-  },
-  {
-    "addresses": [
-      "0x3bd3e709e946b0882cd6393dde0fb200ce7119ce"
-    ],
-    "domains": null,
-    "socials": [
-      {
-        "dappName": "lens",
-        "blockchain": "polygon",
-        "profileName": "lens/@kkm123",
-        "profileImage": "",
-        "profileTokenId": "128532",
-        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
-      }
-    ],
-    "xmtp": null,
-    "nfts": [
-      {
-        "name": "Lens Protocol Profiles",
-        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
-        "blockchain": "polygon",
-        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
-        "tokenId": "51228"
-      },
-      {
-        "name": "lens Handles",
-        "image": null,
-        "blockchain": "polygon",
-        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
-        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
-      }
-    ],
-    "_score": 0
-  },
-  {
-    "addresses": [
-      "0xe8e804e453ffe018f5fc249fb62c69cd37d57b6f"
-    ],
-    "domains": [
-      {
-        "name": "cloudleelyf.eth",
-        "isPrimary": true
-      }
-    ],
-    "socials": [
-      {
-        "dappName": "lens",
-        "blockchain": "polygon",
-        "profileName": "lens/@cloudlee",
-        "profileImage": "",
-        "profileTokenId": "128531",
-        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
-      }
-    ],
-    "xmtp": null,
-    "nfts": [
-      {
-        "name": "Lens Protocol Profiles",
-        "image": "https://assets.airstack.xyz/image/logo/fxm3ZIgPC2reqj8tTFSwoJBlwkfAErCRtK9ECUd2DEOsr0w0I49JYZpjVlAndMAJ/small.jpg",
-        "blockchain": "polygon",
-        "address": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d",
-        "tokenId": "51228"
-      },
-      {
-        "name": "lens Handles",
-        "image": null,
-        "blockchain": "polygon",
-        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
-        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
-      }
-    ],
-    "_score": 0
-  },
-  {
-    "addresses": [
-      "0x7e165ad32b85cecf1e1c3ea0f91c839a74163cd0"
-    ],
-    "domains": null,
-    "socials": [
-      {
-        "dappName": "lens",
-        "blockchain": "polygon",
-        "profileName": "lens/@kalito",
-        "profileImage": "",
-        "profileTokenId": "128530",
-        "profileTokenAddress": "0xdb46d1dc155634fbc732f92e853b10b288ad5a1d"
-      }
-    ],
-    "xmtp": null,
-    "nfts": [
-      {
-        "name": "lens Handles",
-        "image": null,
-        "blockchain": "polygon",
-        "address": "0xe7e7ead361f3aacd73a61a9bd6c10ca17f38e945",
-        "tokenId": "10435460519705875371316725412641463756558778954451945557398654009272986711126"
       }
     ],
     "_score": 0
