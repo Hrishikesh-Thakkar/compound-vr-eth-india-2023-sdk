@@ -63,4 +63,22 @@ function transformData(inputData) {
   return { nodes, links };
 }
 
-export default transformData;
+function createAddressMap(inputData) {
+  const addressMap = new Map();
+
+  inputData.forEach((user, userIndex) => {
+    if (user.addresses) {
+      user.addresses.forEach((address, addressIndex) => {
+        const addressKey = `address${userIndex + 1}_${addressIndex + 1}`;
+        addressMap.set(address, {
+          key: addressKey,
+          user: user,
+        });
+      });
+    }
+  });
+
+  return addressMap;
+}
+
+export { transformData, createAddressMap };

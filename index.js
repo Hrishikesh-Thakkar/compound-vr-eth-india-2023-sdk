@@ -1,7 +1,7 @@
-import { init } from "@airstack/node";
+// import { init } from "@airstack/node";
 import fs from 'fs';
 // import calculatingScore from "./src/airstack/score.js";
-import transformData from "./src/transform.js";
+import { transformData, createAddressMap } from "./src/transform.js";
 
 import fetchPoapsData from "./src/airstack/functions/fetchPoapsData.js";
 import fetchFarcasterFollowings from "./src/airstack/functions/fetchFarcasterFollowings.js";
@@ -52,6 +52,26 @@ function writeArrayToFile(array, fileName) {
   });
 }
 
+const writeMapToFile = (map, filePath) => {
+  try {
+    // Convert the Map to a plain JavaScript object
+    const plainObject = {};
+    map.forEach((value, key) => {
+      plainObject[key] = value;
+    });
+
+    // Convert the object to a JSON string
+    const jsonString = JSON.stringify(plainObject, null, 2);
+
+    // Write the JSON string to the file
+    fs.writeFileSync(filePath, jsonString, 'utf8');
+
+    console.log('Map has been successfully written to the file.');
+  } catch (error) {
+    console.error(`Error writing Map to file: ${error.message}`);
+  }
+};
+
 const readJsonArrayFromFile = (filePath) => {
   try {
     // Read the file synchronously
@@ -80,3 +100,6 @@ let jsonArray = readJsonArrayFromFile('output.json');
 // Example usage with the provided data
 const outputData = transformData(jsonArray);
 writeArrayToFile(outputData, 'transformed.json');
+
+const addressMap = createAddressMap(jsonArray);
+writeMapToFile(addressMap, 'addressMap.json');
