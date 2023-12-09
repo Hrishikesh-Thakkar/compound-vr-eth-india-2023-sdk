@@ -18,14 +18,14 @@ const fetchOnChainGraphData = async (address) => {
   let recommendedUsers = [];
   const fetchFunctions = [
     fetchPoapsData,
-    fetchFarcasterFollowings,
-    fetchLensFollowings,
-    fetchFarcasterFollowers,
-    fetchLensFollowers,
-    fetchTokenSent,
-    fetchTokenReceived,
-    fetchEthNft,
-    fetchPolygonNft,
+    // fetchFarcasterFollowings,
+    // fetchLensFollowings,
+    // fetchFarcasterFollowers,
+    // fetchLensFollowers,
+    // fetchTokenSent,
+    // fetchTokenReceived,
+    // fetchEthNft,
+    // fetchPolygonNft,
     fetchBaseNft,
   ];
   for (const func of fetchFunctions) {

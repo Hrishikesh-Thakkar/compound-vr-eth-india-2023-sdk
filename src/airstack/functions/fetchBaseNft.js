@@ -81,7 +81,7 @@ const fetchBaseNft = async (address, existingUsers = []) => {
       let baseNftHoldersDataResponse;
       while (true) {
         if (tokenAddresses.length === 0) break;
-        if (!pbaseNftHoldersDataResponse) {
+        if (!baseNftHoldersDataResponse) {
           // Pagination #2: Fetch Base NFT Holders
           baseNftHoldersDataResponse = await fetchQueryWithPagination(
             nftQuery,
@@ -103,22 +103,22 @@ const fetchBaseNft = async (address, existingUsers = []) => {
               recommendedUsers
             ),
           ];
-          // if (!baseNftHoldersHasNextPage) {
-          break;
-          // } else {
-          //   baseNftHoldersDataResponse =
-          //     await baseNftHoldersGetNextPage();
-          // }
+          if (!baseNftHoldersHasNextPage) {
+            break;
+          } else {
+            baseNftHoldersDataResponse =
+              await baseNftHoldersGetNextPage();
+          }
         } else {
           console.error("Error: ", baseNftHoldersError);
           break;
         }
       }
-      // if (!baseNftHasNextPage) {
-      break;
-      // } else {
-      //   baseNftDataResponse = await baseNftGetNextPage();
-      // }
+      if (!baseNftHasNextPage) {
+        break;
+      } else {
+        baseNftDataResponse = await baseNftGetNextPage();
+      }
     } else {
       console.error("Error: ", baseNftError);
       break;

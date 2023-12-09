@@ -5,8 +5,8 @@ import formatPoapsData from "../utils/formatPoapsData.js";
 
 
 const userPoapsEventIdsQuery = `
-query MyQuery {
-  Poaps(input: {filter: {owner: {_eq: "vitalik.eth"}}, blockchain: ALL}) {
+query MyQuery($user: Identity) {
+  Poaps(input: {filter: {owner: {_eq: $user}}, blockchain: ALL}) {
     Poap {
       eventId
       poapEvent {
@@ -55,6 +55,7 @@ query MyQuery($eventIds: [String!]) {
 }
 `;
 
+
 const fetchPoapsData = async (address, existingUsers = []) => {
   let poapsDataResponse;
   let recommendedUsers = [...existingUsers];
@@ -80,40 +81,42 @@ const fetchPoapsData = async (address, existingUsers = []) => {
           (poap) => !poap?.poapEvent?.isVirtualEvent
         ).map((poap) => poap?.eventId) ?? [];
       let poapHoldersDataResponse;
-      if (eventIds.length === 0) break;
-      if (!poapHoldersDataResponse) {
-        // Pagination #2: Fetch All POAP holders
-        poapHoldersDataResponse = await fetchQueryWithPagination(
-          poapsByEventIdsQuery,
-          {
-            eventIds,
-          }
-        );
-      }
-      const {
-        data: poapHoldersData,
-        error: poapHoldersError,
-        hasNextPage: poapHoldersHasNextPage,
-        getNextPage: poapHoldersGetNextPage,
-      } = poapHoldersDataResponse;
-      if (!poapHoldersError) {
-        recommendedUsers = [
-          ...formatPoapsData(poapHoldersData?.Poaps?.Poap, recommendedUsers),
-        ];
-        if (!poapHoldersHasNextPage) {
-          break;
-          // } else {
-          //   poapHoldersDataResponse = await poapHoldersGetNextPage();
+      while (true) {
+        if (eventIds.length === 0) break;
+        if (!poapHoldersDataResponse) {
+          // Pagination #2: Fetch All POAP holders
+          poapHoldersDataResponse = await fetchQueryWithPagination(
+            poapsByEventIdsQuery,
+            {
+              eventIds,
+            }
+          );
         }
-      } else {
-        console.error("Error: ", poapHoldersError);
-        break;
+        const {
+          data: poapHoldersData,
+          error: poapHoldersError,
+          hasNextPage: poapHoldersHasNextPage,
+          getNextPage: poapHoldersGetNextPage,
+        } = poapHoldersDataResponse;
+        if (!poapHoldersError) {
+          recommendedUsers = [
+            ...formatPoapsData(poapHoldersData?.Poaps?.Poap, recommendedUsers),
+          ];
+          if (!poapHoldersHasNextPage) {
+            break;
+          } else {
+            poapHoldersDataResponse = await poapHoldersGetNextPage();
+          }
+        } else {
+          console.error("Error: ", poapHoldersError);
+          break;
+        }
       }
-      // if (!poapsHasNextPage) {
-      break;
-      //   } else {
-      //     poapsDataResponse = await poapsGetNextPage();
-      // }
+      if (!poapsHasNextPage) {
+        break;
+      } else {
+        poapsDataResponse = await poapsGetNextPage();
+      }
     } else {
       console.error("Error: ", poapsError);
       break;
