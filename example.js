@@ -28,12 +28,12 @@ writeJsonArrayToFile('./onChainGraphWithScore.json', onChainGraphUsersWithScore)
 // read onchain graph data from file
 let onChainGraphWithScore = readJsonArrayFromFile("./onChainGraphWithScore.json")
 
-// transform onchain graph data to match the format of the visualisation tool
-let visualisationData = transformData(onChainGraphWithScore, onChainGraphWithScore.length);
-writeJsonArrayToFile('./visualisationData.json', visualisationData);
-
 let addressMap = createAddressMap(onChainGraphWithScore);
 writeMapToFile(addressMap, './addressMap.json');
+
+// transform onchain graph data to match the format of the visualisation tool
+let visualisationData = transformData(onChainGraphWithScore, addressMap, onChainGraphWithScore.length);
+writeJsonArrayToFile('./visualisationData.json', visualisationData);
 
 // example: fetch nft details by contract address and token id, blockchain
 let nft = await fetchNftDetails("0xdb46d1dc155634fbc732f92e853b10b288ad5a1d", "51228", "polygon");
