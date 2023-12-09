@@ -1,4 +1,4 @@
-# compound-vr-eth-india-2023-sdk
+# Airstack On-Chain Friends SDK (by Compound VR EthIndia 2023)
 
 ## Description
 
@@ -39,3 +39,11 @@ To use this project, follow the steps below:
       ```bash
       npm run fetch
       ```
+
+## Note
+**Above command will fetch data for given identity and store it in json files in root folder.**
+- `onChainGraphUsers.json`: On ChainGraph Data for given identity
+- `onChainGraphWithScore.json`: On ChainGraph Data with score for given identity
+- `visualisationData.json`: Transformed on chain graph data for visualization graph for given identity
+- `nft.json`: Token Nft data by tokenAddress, tokenId and blockchain
+- `poapEvent.json`: POAP event data by eventId and blockchain
