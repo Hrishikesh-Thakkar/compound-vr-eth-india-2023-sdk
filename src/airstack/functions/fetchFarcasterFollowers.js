@@ -67,11 +67,11 @@ const fetchFarcasterFollowers = async (address, existingUsers = [], query = soci
       recommendedUsers = [
         ...formatFarcasterFollowersData(followings, recommendedUsers),
       ];
-      // if (!hasNextPage) {
-      break;
-      // } else {
-      //   res = await getNextPage();
-      // }
+      if (!hasNextPage) {
+        break;
+      } else {
+        res = await getNextPage();
+      }
     } else {
       console.error("Error: ", error);
       break;

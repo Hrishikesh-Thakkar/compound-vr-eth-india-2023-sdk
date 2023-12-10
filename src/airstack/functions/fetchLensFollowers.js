@@ -68,11 +68,11 @@ const fetchLensFollowers = async (address, existingUsers = [], query = socialFol
       recommendedUsers = [
         ...formatLensFollowersData(followings, recommendedUsers),
       ];
-      // if (!hasNextPage) {
-      break;
-      // } else {
-      //   res = await getNextPage();
-      // }
+      if (!hasNextPage) {
+        break;
+      } else {
+        res = await getNextPage();
+      }
     } else {
       console.error("Error: ", error);
       break;

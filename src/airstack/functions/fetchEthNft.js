@@ -108,11 +108,11 @@ const fetchEthNft = async (address, existingUsers = [], query1 = nftAddressesQue
               recommendedUsers
             ),
           ];
-          // if (!ethNftHoldersHasNextPage) {
-          break;
-          // } else {
-          //   ethNftHoldersDataResponse = await ethNftHoldersGetNextPage();
-          // }
+          if (!ethNftHoldersHasNextPage) {
+            break;
+          } else {
+            ethNftHoldersDataResponse = await ethNftHoldersGetNextPage();
+          }
         } else {
           console.error("Error: ", ethNftHoldersError);
           break;

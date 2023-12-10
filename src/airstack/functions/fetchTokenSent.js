@@ -115,11 +115,11 @@ const fetchTokenSent = async (address, existingUsers = [], query = tokenSentQuer
       recommendedUsers = [
         ...formatTokenSentData(tokenTransfer, recommendedUsers),
       ];
-      // if (!hasNextPage) {
-      break;
-      // } else {
-      //   res = await getNextPage();
-      // }
+      if (!hasNextPage) {
+        break;
+      } else {
+        res = await getNextPage();
+      }
     } else {
       console.error("Error: ", error);
       break;

@@ -106,11 +106,11 @@ const fetchTokenReceived = async (address, existingUsers = [], query = tokenRece
       recommendedUsers = [
         ...formatTokenReceivedData(tokenTransfer, recommendedUsers),
       ];
-      // if (!hasNextPage) {
-      break;
-      // } else {
-      //   res = await getNextPage();
-      // }
+      if (!hasNextPage) {
+        break;
+      } else {
+        res = await getNextPage();
+      }
     } else {
       console.error("Error: ", error);
       break;

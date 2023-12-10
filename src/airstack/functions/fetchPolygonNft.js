@@ -114,12 +114,12 @@ const formatPolygonNftData = async (address, existingUsers = [], query1 = nftAdd
               recommendedUsers
             ),
           ];
-          // if (!polygonNftHoldersHasNextPage) {
-          break;
-          // } else {
-          //   polygonNftHoldersDataResponse =
-          //     await polygonNftHoldersGetNextPage();
-          // }
+          if (!polygonNftHoldersHasNextPage) {
+            break;
+          } else {
+            polygonNftHoldersDataResponse =
+              await polygonNftHoldersGetNextPage();
+          }
         } else {
           console.error("Error: ", polygonNftHoldersError);
           break;
